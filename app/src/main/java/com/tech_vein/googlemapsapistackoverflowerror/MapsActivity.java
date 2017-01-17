@@ -1,12 +1,13 @@
 package com.tech_vein.googlemapsapistackoverflowerror;
 
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -38,9 +39,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        setupMapSettings(mMap.getUiSettings());
+
         // Add a marker in Sydney and move the camera
         LatLng honmachi = new LatLng(34.681848, 135.501503);
         mMap.addMarker(new MarkerOptions().position(honmachi).title("Marker in Honmachi"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(honmachi, 15f));
+    }
+
+    // ZoomGesturesEnabled and ScrollGesturesEnabled are true.
+    private void setupMapSettings(UiSettings uiSettings) {
+        uiSettings.setAllGesturesEnabled(false);
+        uiSettings.setZoomGesturesEnabled(true);
+        uiSettings.setScrollGesturesEnabled(true);
+        uiSettings.setMapToolbarEnabled(false);
+        uiSettings.setMyLocationButtonEnabled(false);
+        uiSettings.setCompassEnabled(false);
+        uiSettings.setIndoorLevelPickerEnabled(false);
     }
 }
