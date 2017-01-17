@@ -41,7 +41,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         setupMapSettings(mMap.getUiSettings());
 
-        // Add a marker in Sydney and move the camera
+        // Add a marker in Honmachi(Osaka City in Japan) and move the camera
         LatLng honmachi = new LatLng(34.681848, 135.501503);
         mMap.addMarker(new MarkerOptions().position(honmachi).title("Marker in Honmachi"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(honmachi, 15f));
