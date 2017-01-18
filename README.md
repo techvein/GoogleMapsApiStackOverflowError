@@ -38,3 +38,10 @@ W/System: ClassLoader referenced unknown path: /data/user/0/com.google.android.g
 I/art: Thread[2,tid=13732,WaitingInMainSignalCatcherLoop,Thread*=0xaee72000,peer=0x12d0c0a0,"Signal Catcher"]: reacting to signal 3
 I/art: Wrote stack traces to '/data/anr/traces.txt'
 ```
+
+## About phone
+
+* Model number: Nexus 5
+* Android version: 6.0.1
+
+
